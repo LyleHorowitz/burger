@@ -3,13 +3,13 @@ var connection = require('./connection.js');
 
 var orm = {
 
-    allBurgers: function(callback) {
+    showBurgers: function(callback) {
         var s = 'SELECT id, burger_name, devoured, time FROM burgers ORDER BY time desc';
-        connection.query(s, function(err, allBurgersData) {
+        connection.query(s, function(err, showBurgersData) {
             if (err) {
                 throw err;
             }
-            callback(allBurgersData)
+            callback(showBurgersData)
         });
     },
 
